@@ -1,0 +1,8 @@
+.container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  background: #f6f6f0;
+}
