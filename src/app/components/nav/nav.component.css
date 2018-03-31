@@ -11,5 +11,10 @@ li {
 }
 
 li + li:before {
-  content: " |";
+  content: ' |';
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
