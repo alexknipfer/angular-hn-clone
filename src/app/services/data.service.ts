@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { User } from '../shared/models/user.model'
 import { Observable } from 'rxjs/Observable'
 import { Post } from '../shared/models/post.model'
+import { Comment } from '../shared/models/comment.model'
 
 @Injectable()
 export class DataService {
@@ -18,6 +19,11 @@ export class DataService {
   getUsers(): Observable<User[]> {
     const apiUrl = this._getApiUrl('users')
     return this.http.get<User[]>(apiUrl)
+  }
+
+  getCommentsByPostId(postId): Observable<Comment[]> {
+    const apiUrl = this._getApiUrl(`comments/?postId=${postId}`)
+    return this.http.get<Comment[]>(apiUrl)
   }
 
   _getApiUrl(urlSegment: string) {
