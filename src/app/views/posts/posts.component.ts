@@ -27,6 +27,7 @@ export class PostsComponent implements OnInit {
   }
 
   handleError(error) {
+    this.loading = false
     console.log('there was an error: ', error.message)
   }
 }
