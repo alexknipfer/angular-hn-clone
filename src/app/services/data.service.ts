@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import 'rxjs/add/operator/map'
 
 @Injectable()
 export class DataService {
@@ -10,7 +9,7 @@ export class DataService {
 
   getPosts() {
     const apiUrl = this._getApiUrl('posts')
-    return this.http.get(apiUrl).map(res => res)
+    return this.http.get(apiUrl)
   }
 
   _getApiUrl(urlSegment: string) {
