@@ -12,6 +12,11 @@ export class DataService {
     return this.http.get(apiUrl)
   }
 
+  getUsers() {
+    const apiUrl = this._getApiUrl('users')
+    return this.http.get(apiUrl)
+  }
+
   _getApiUrl(urlSegment: string) {
     return `${this.baseUrl}${urlSegment}`
   }
