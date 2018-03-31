@@ -8,9 +8,10 @@ import { DefaultComponent } from "./layouts/default/default.component";
 import { PostsComponent } from "./views/posts/posts.component";
 
 import { DataService } from "./services/data.service";
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, DefaultComponent, PostsComponent],
+  declarations: [AppComponent, NavComponent, DefaultComponent, PostsComponent, LoaderComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [DataService],
   bootstrap: [AppComponent]
