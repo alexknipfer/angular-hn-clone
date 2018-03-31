@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { DataService } from '../../services/data.service'
-
-interface IUser {
-  username: string
-  name: string
-  email: string
-  phone: string
-}
+import { User } from '../../shared/models/user.model'
 
 @Component({
   selector: 'app-users',
@@ -20,7 +14,7 @@ export class UsersComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getUsers().subscribe((users: IUser[]) => {
+    this.dataService.getUsers().subscribe((users: User[]) => {
       this.loading = false
       this.users = users
     }, this.handleError)

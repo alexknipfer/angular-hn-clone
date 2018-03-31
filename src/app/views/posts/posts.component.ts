@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { DataService } from '../../services/data.service'
-
-interface IPost {
-  userId: number
-  id: number
-  title: string
-  body: string
-}
+import { Post } from '../../shared/models/post.model'
 
 @Component({
   selector: 'app-posts',
@@ -14,13 +8,13 @@ interface IPost {
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts: IPost[]
+  posts: Post[]
   loading: boolean = true
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getPosts().subscribe((posts: IPost[]) => {
+    this.dataService.getPosts().subscribe((posts: Post[]) => {
       this.loading = false
       this.posts = posts
     }, this.handleError)
