@@ -15,12 +15,18 @@ interface IPost {
 })
 export class PostsComponent implements OnInit {
   posts: IPost[]
+  loading: boolean = true
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService
-      .getPosts()
-      .subscribe((posts: IPost[]) => (this.posts = posts))
+    this.dataService.getPosts().subscribe((posts: IPost[]) => {
+      this.loading = false
+      this.posts = posts
+    }, this.handleError)
+  }
+
+  handleError(error) {
+    console.log('there was an error: ', error.message)
   }
 }
