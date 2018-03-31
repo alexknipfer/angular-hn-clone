@@ -1,0 +1,8 @@
+.post-row {
+  display: flex;
+}
+
+.post-number {
+  text-align: left;
+  margin-right: 10px;
+}
