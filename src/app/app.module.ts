@@ -10,7 +10,8 @@ import { PostsComponent } from './views/posts/posts.component'
 import { DataService } from './services/data.service'
 import { LoaderComponent } from './components/loader/loader.component'
 import { AppRoutingModule } from './app-routing.module';
-import { UsersComponent } from './views/users/users.component'
+import { UsersComponent } from './views/users/users.component';
+import { CommentsComponent } from './views/comments/comments.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UsersComponent } from './views/users/users.component'
     DefaultComponent,
     PostsComponent,
     LoaderComponent,
-    UsersComponent
+    UsersComponent,
+    CommentsComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [DataService],
