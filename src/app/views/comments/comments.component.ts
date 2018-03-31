@@ -14,6 +14,7 @@ import { Comment } from '../../shared/models/comment.model'
 export class CommentsComponent implements OnInit {
   postId: Observable<string>
   comments: Comment[]
+  loading: boolean = true
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +32,14 @@ export class CommentsComponent implements OnInit {
 
     this.dataService
       .getCommentsByPostId(this.postId)
-      .subscribe((comments: Comment[]) => (this.comments = comments))
+      .subscribe((comments: Comment[]) => {
+        this.loading = false
+        this.comments = comments
+      }, this.handleError)
+  }
+
+  handleError(error) {
+    this.loading = false
+    console.log('there was an error: ', error.message)
   }
 }
