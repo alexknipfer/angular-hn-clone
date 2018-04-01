@@ -12,3 +12,7 @@
     <td>{{ user.phone }}</td>
   </tr>
 </table>
+
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>
