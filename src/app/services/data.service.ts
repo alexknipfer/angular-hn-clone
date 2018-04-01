@@ -16,6 +16,11 @@ export class DataService {
     return this.http.get<Post[]>(apiUrl)
   }
 
+  addPost(post: Post): Observable<Post> {
+    const apiUrl = this._getApiUrl('posts')
+    return this.http.post<Post>(apiUrl, JSON.stringify(post))
+  }
+
   getUsers(): Observable<User[]> {
     const apiUrl = this._getApiUrl('users')
     return this.http.get<User[]>(apiUrl)
