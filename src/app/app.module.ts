@@ -9,9 +9,10 @@ import { PostsComponent } from './views/posts/posts.component'
 
 import { DataService } from './services/data.service'
 import { LoaderComponent } from './components/loader/loader.component'
-import { AppRoutingModule } from './app-routing.module';
-import { UsersComponent } from './views/users/users.component';
-import { CommentsComponent } from './views/comments/comments.component'
+import { AppRoutingModule } from './app-routing.module'
+import { UsersComponent } from './views/users/users.component'
+import { CommentsComponent } from './views/comments/comments.component';
+import { AddPostFormComponent } from './forms/add-post-form/add-post-form.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CommentsComponent } from './views/comments/comments.component'
     PostsComponent,
     LoaderComponent,
     UsersComponent,
-    CommentsComponent
+    CommentsComponent,
+    AddPostFormComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [DataService],
