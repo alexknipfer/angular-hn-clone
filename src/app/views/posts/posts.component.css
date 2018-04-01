@@ -1,8 +1,32 @@
 .post-row {
+  margin-bottom: 5px;
+  padding: 0 5px;
+}
+
+/* POST TITLE AND NUMBER */
+.post-title-details {
   display: flex;
 }
 
+.post-title {
+  flex-wrap: wrap;
+}
+
 .post-number {
-  text-align: left;
+  min-width: 20px;
+  text-align: right;
   margin-right: 10px;
+}
+
+/* LINKS BELOW POST TITLE */
+.post-sub-section {
+  font-size: 7pt;
+  color: #828282;
+  margin-left: 30px;
+}
+
+.comment-link {
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
 }
