@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
 import { NavComponent } from './components/nav/nav.component'
@@ -11,7 +12,7 @@ import { DataService } from './services/data.service'
 import { LoaderComponent } from './components/loader/loader.component'
 import { AppRoutingModule } from './app-routing.module'
 import { UsersComponent } from './views/users/users.component'
-import { CommentsComponent } from './views/comments/comments.component';
+import { CommentsComponent } from './views/comments/comments.component'
 import { AddPostFormComponent } from './forms/add-post-form/add-post-form.component'
 
 @NgModule({
@@ -25,7 +26,12 @@ import { AddPostFormComponent } from './forms/add-post-form/add-post-form.compon
     CommentsComponent,
     AddPostFormComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
+  ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
