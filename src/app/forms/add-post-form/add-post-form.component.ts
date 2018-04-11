@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup } from '@angular/forms'
+import { DataService } from '../../services/data.service'
+import { Post } from '../../shared/models/post.model'
 
 @Component({
   selector: 'app-add-post-form',
@@ -9,6 +11,8 @@ import { FormControl, FormGroup } from '@angular/forms'
 export class AddPostFormComponent implements OnInit {
   addPostForm: FormGroup
 
+  constructor(private dataService: DataService) {}
+
   ngOnInit() {
     this.addPostForm = new FormGroup({
       title: new FormControl(),
@@ -17,10 +21,18 @@ export class AddPostFormComponent implements OnInit {
     })
   }
 
-  // constructor() { }
-
   addPost() {
-    const { title, body, userId } = this.addPostForm.controls
-    console.log('ADD POST VALUES!', title.value, body.value, userId.value)
+    const post = {
+      title: String(this.addPostForm.controls.title),
+      body: String(this.addPostForm.controls.body),
+      userId: Number(this.addPostForm.controls.userId)
+    }
+
+    this.dataService.addPost(post).subscribe(
+      (post: Post) => {
+        console.log('POST ADDED: ', post)
+      },
+      error => console.log('ERROR: ', error)
+    )
   }
 }
