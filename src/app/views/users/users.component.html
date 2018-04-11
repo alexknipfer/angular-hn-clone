@@ -4,12 +4,16 @@
     <th>Name</th>
     <th>Email</th>
     <th>Phone</th>
+    <th>Remove User</th>
   </tr>
   <tr *ngFor="let user of users">
     <td>{{ user.username }}</td>
     <td>{{ user.name }}</td>
     <td>{{ user.email }}</td>
     <td>{{ user.phone }}</td>
+    <td>
+      <a (click)="deleteUser(user)">Delete</a>
+    </td>
   </tr>
 </table>
 

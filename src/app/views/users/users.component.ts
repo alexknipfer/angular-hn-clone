@@ -24,4 +24,8 @@ export class UsersComponent implements OnInit {
     this.loading = false
     console.log('there was an error: ', error.message)
   }
+
+  deleteUser(userToDelete) {
+    this.users = this.users.filter(user => user.id !== userToDelete.id)
+  }
 }
